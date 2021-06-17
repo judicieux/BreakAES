@@ -3,8 +3,9 @@ from itertools import chain
 import random
 import base64
 
+BLOCK_SIZE = 16
+
 def encrypt():
-    BLOCK_SIZE = 16
     charset = "".join(chr(i) for i in chain(range(ord('a'), ord('z') + 1), range(ord('A'), ord('Z') + 1), range(ord('1'), ord('9') + 1)))
     key = ''.join(random.choice(charset) for x in range(BLOCK_SIZE * 2))
     iv = ''.join(random.choice(charset) for x in range(BLOCK_SIZE))
